@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        /* Descendant combinator Ex:1 (space) */
+        div p {
+            background-color: rgb(142, 134, 150);
+        }
+
+        /* Child combinator Ex:1 (>) */
+        div > span{
+            color:brown;
+        }
+
+        /* Next Sibling combinator (+) */
+        div + h1{
+            background-color: rgb(168, 192, 147);
+        }
+
+        /* Subsequent Sibling combinator */
+        div ~ h3{
+            background-color: rgb(197, 129, 57);
+        }
+    </style>
+</head>
+<body>
+    <!-- Four different combinators -->
+     <!-- 1.Descendant combinator -->
+
+     <h1>1.Descendant combinators</h1>
+
+     <p> Matches all the elements that are descendants(children, grandchildren, etc,.) of a specified element.</p>
+
+     <div>
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <p>Paragraph 3 in the div.</p>
+        <section>
+            <p>This will also change.</p> <!-- Paragraph (grandchild) inside Section -->
+        </section>
+     </div>
+     <p>Paragraph 4 in the div.</p>
+     <p>Paragraph 5 in the div.</p>
+     <hr>
+
+     <!-- 2.Child combinator -->
+      <h1>2.Child combinators</h1>
+      <p>Selects all the span elements that are direct children 
+        of a (specified) div element using (>).</p>
+
+        <!-- Main difference between descendant and child is, grnad 
+         children are not affected in child combintor, to affect, we must
+         give deepest element structure like div > p > span -->
+     <div>
+        <span>Ex: Span 1 is in the div.</span>
+        <span>Span 2 is also in the div.</span>
+        <p> <!--- This is colored using div p-->
+            <span>This will not change</span> <!-- span (grnadchild) inside p will not be styled -->
+        </p>
+     </div>
+     <hr>
+    
+
+     <!-- 3. Next Sibling combinator -->
+      <h1>3. Next Sibling Combinator</h1>
+      <p>Selects the first element that is placed immediately
+        added after div end tag(/div) element using (+).</p>
+      <div>
+        <h1>h1 in the div</h1>
+        <h1>h1 in the div.</h1>
+      </div>
+      <h1>First h1 after div</h1>
+      <h1>Second h1 after div</h1>
+      <hr>
+
+      <!-- 4.Subsequent Sibling combinator -->
+       <h1>4. Subsequent Sibling Combinator</h1>
+       <p>Selects all the h3 elements that are placed immediatley
+        added after div end tag (/div) element using (~).</p>
+        <div>
+            <h3>h3 in the div</h3>
+            <h3>h3 in the div</h3>
+        </div>
+        <h3>First h3 after div</h3>
+        <h3>Second h3 after div</h3>
+        <h2>h2 element after div</h2>
+        <h3>Third h3 after div</h3>
+        <hr>
+</body>
+</html>
